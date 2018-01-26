@@ -25,18 +25,13 @@ class DropDown extends React.Component {
         }
     }
 
+
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
         this.setState({ list: this.props.data })
-        console.log(this.state.list);
+        //console.log(this.state.list);
 
-
-        // const { multi } = this.state;
-        // if(multi) {
-        //     this.setState({ multiValue: value});
-        // } else {
-        //     this.setState({value});
-        // }
+        
     }
 
     render() {

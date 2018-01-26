@@ -11,6 +11,7 @@ import { fetchData } from '../actions/index';
 
 //Component Imports
 import DropDown from './dropDown';
+import Drop from './drop';
 
 //Helper Functions
 import * as appContent from '../util/appContent';
@@ -26,9 +27,15 @@ class MainPanel extends React.Component {
         this.onButtonClickSubmit = this.onButtonClickSubmit.bind(this);
     }
 
+    componentDidMount(){
+        this.props.fetchData();
+    }
+
     onButtonClickSubmit() {
         this.props.fetchData();
     }
+
+
 
 
     render() {
@@ -47,6 +54,7 @@ class MainPanel extends React.Component {
                 <h3 style={{ fontSize: '1.5rem' }}> {appContent.heading} </h3>
                 </CardText>
                 <DropDown />
+                <Drop />
                 <RaisedButton label="Fetch" primary={true}  onClick={this.onButtonClickSubmit} style={{ width: '2vw', marginRight: '10vw', marginTop: '40vh'}} />
             </Card>
         );
